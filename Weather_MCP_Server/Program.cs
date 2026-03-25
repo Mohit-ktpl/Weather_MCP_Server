@@ -11,7 +11,7 @@ builder.Services.AddMcpServer()
     {
         options.Stateless = true; // This stops the "Session-Id required" error
     })
-    .WithToolsFromAssembly();
+    .WithToolsFromAssembly(typeof(QuickstartWeatherServer.Tools.WeatherTools).Assembly);
 
 // 2. Register your Weather API client
 builder.Services.AddSingleton(_ =>
