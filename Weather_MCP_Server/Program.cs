@@ -22,6 +22,6 @@ var app = builder.Build();
 
 // 3. Map the MCP endpoints 
 // This automatically exposes the `/sse` and `/message` endpoints required for Streamable HTTP/SSE transport.
-app.MapMcp();
+app.MapMcp("/sse");
 
 await app.RunAsync();
