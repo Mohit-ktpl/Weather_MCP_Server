@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace QuickstartWeatherServer.Tools;
+namespace Weather_MCP_Server.Tools;
 
 [McpServerToolType]
 public static class WeatherTools
