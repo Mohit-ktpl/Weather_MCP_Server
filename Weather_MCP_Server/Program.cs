@@ -7,7 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 // 1. Add the MCP server. 
 // The AspNetCore package automatically registers the required HTTP/SSE transport services.
 builder.Services.AddMcpServer()
-    .WithHttpTransport()
+   .WithHttpTransport(options => 
+    {
+        options.Stateless = true; // This stops the "Session-Id required" error
+    })
     .WithToolsFromAssembly();
 
 // 2. Register your Weather API client
