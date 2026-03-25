@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Extensions/">
+    <File Path="WeatherHttpClient.cs" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".dockerignore" />
+    <File Path="Dockerfile" />
+  </Folder>
+  <Folder Name="/Tools/">
+    <File Path="WeatherTools.cs" />
+  </Folder>
+  <Project Path="Weather_MCP_Server/Weather_MCP_Server.csproj" />
+</Solution>
