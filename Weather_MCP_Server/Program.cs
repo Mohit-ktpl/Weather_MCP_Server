@@ -17,11 +17,24 @@ builder.Services.AddSingleton(_ =>
     client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("weather-tool", "1.0"));
     return client;
 });
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("*") // In production, replace with your client's origin
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              // CRITICAL: This allows the client to see the Session ID
+              .WithExposedHeaders("Mcp-Session-Id", "Mcp-Protocol-Version");
+    });
+});
 
 var app = builder.Build();
 
 // 3. Map the MCP endpoints 
 // This automatically exposes the `/sse` and `/message` endpoints required for Streamable HTTP/SSE transport.
+app.UseCors();
 app.MapMcp("/sse");
+
 
 await app.RunAsync();
