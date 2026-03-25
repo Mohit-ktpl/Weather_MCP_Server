@@ -1,4 +1,4 @@
-using QuickstartWeatherServer.Tools; 
+using Weather_MCP_Server.Tools; 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http.Headers;
